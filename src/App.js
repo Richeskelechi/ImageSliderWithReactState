@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import Counter from './components/Counter';
+import Header from './components/Header';
+import Slider from './components/Slider';
 
 function App() {
+  let [visible, setVisible] = useState(true);
+  const HandleVisible = () => {
+    setVisible(!visible);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={HandleVisible}>{visible ? "Hide Slider" : "Show Slider"}</button>
+      {visible ? <Slider /> : null}
+      <Header title={"Hello"} title2={"Hello World"} />
+      <Counter />
     </div>
   );
 }
