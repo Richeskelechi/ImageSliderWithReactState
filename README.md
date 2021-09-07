@@ -6,8 +6,7 @@ Then Run npm start
 
 The project will show you how to use the following
 
-React components
-React useState
+React components And React useState
 
 Having an Increase and Decrease Button with using Usestate
 
