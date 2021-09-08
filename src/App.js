@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <button onClick={HandleVisible}>{buttonText}</button>
       <div className={visible ? "visible" : "hidden"}><Slider /></div>
-      {/* Note: I want want the page to Unmount when ever the state changes, that is why i am using the css styles to show and
+      {/* Note: I dom't want the page to Unmount whenever the state changes, that is why i am using the css styles to show and
       hide the elements depending on the classNames. */}
       <div className={visible ? "hidden" : "visible"}><Counter /></div>
       <Header title={"Hello"} title2={"Hello World"} />
