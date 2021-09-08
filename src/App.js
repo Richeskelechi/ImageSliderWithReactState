@@ -9,12 +9,16 @@ function App() {
   const HandleVisible = () => {
     setVisible(!visible);
   }
+  let buttonText = visible ? "Show Counter" : "Show Slider";
+
   return (
     <div className="App">
-      <button onClick={HandleVisible}>{visible ? "Hide Slider" : "Show Slider"}</button>
-      {visible ? <Slider /> : null}
+      <button onClick={HandleVisible}>{buttonText}</button>
+      <div className={visible ? "visible" : "hidden"}><Slider /></div>
+      {/* Note: I want want the page to Unmount when ever the state changes, that is why i am using the css styles to show and
+      hide the elements depending on the classNames. */}
+      <div className={visible ? "hidden" : "visible"}><Counter /></div>
       <Header title={"Hello"} title2={"Hello World"} />
-      <Counter />
     </div>
   );
 }
